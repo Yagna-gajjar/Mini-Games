@@ -72,6 +72,23 @@ function selectnumber() {
         else {
             let r = selectedbox.id.slice(4, 5);
             let c = selectedbox.id.slice(-1);
+
+            if (solvedSudoku[r - 1][c - 1] == n) {
+                selectedbox.innerText = n;
+                unsolvedSudoku[r - 1][c - 1] = selectedbox.innerText;
+
+                for (let i = 0; i < 9; i++) {
+                    for (let j = 0; j < 9; j++) {
+
+                        if (selectedbox.innerText != "") {
+                            if (unsolvedSudoku[i][j] == selectedbox.innerText) {
+                                document.getElementById("box_" + (i + 1) + "_" + (j + 1)).classList.add("selectedbox");
+                            }
+                        }
+                    }
+                }
+            }
+            
             if (solvedSudoku[r - 1][c - 1] == this.innerText) {
                 selectedbox.innerText = this.innerText;
                 unsolvedSudoku[r - 1][c - 1] = selectedbox.innerText;
@@ -137,6 +154,44 @@ function selectbox() {
         }
     }
 }
+
+
+window.addEventListener('keypress', e => {
+    switch (e.code) {
+        case "Digit1":
+            selectnumber(1);
+            break;
+        case "Digit2":
+            selectnumber(2);
+            break;
+        case "Digit3":
+            selectnumber(3);
+            break;
+        case "Digit4":
+            selectnumber(4);
+            break;
+        case "Digit5":
+            selectnumber(5);
+            break;
+        case "Digit6":
+            selectnumber(6);
+            break;
+        case "Digit7":
+            selectnumber(7);
+            break;
+        case "Digit8":
+            selectnumber(8);
+            break;
+        case "Digit9":
+            selectnumber(9);
+            break;
+        default:
+            break;
+
+    }
+});
+
+
 let startTime;
 let running = false;
 let elapsedTime = 0;
