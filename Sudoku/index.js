@@ -64,7 +64,7 @@ function Gamestart() {
     }
 }
 
-function selectnumber() {
+function selectnumber(n) {
     if (selectedbox) {
         if (selectedbox.innerText != "") {
             return;
@@ -72,7 +72,6 @@ function selectnumber() {
         else {
             let r = selectedbox.id.slice(4, 5);
             let c = selectedbox.id.slice(-1);
-
             if (solvedSudoku[r - 1][c - 1] == n) {
                 selectedbox.innerText = n;
                 unsolvedSudoku[r - 1][c - 1] = selectedbox.innerText;
@@ -88,8 +87,7 @@ function selectnumber() {
                     }
                 }
             }
-            
-            if (solvedSudoku[r - 1][c - 1] == this.innerText) {
+            else if (solvedSudoku[r - 1][c - 1] == this.innerText) {
                 selectedbox.innerText = this.innerText;
                 unsolvedSudoku[r - 1][c - 1] = selectedbox.innerText;
 
@@ -112,7 +110,7 @@ function selectnumber() {
         }
     }
 
-    if (mistakes > 5) {
+    if (mistakes >= 5) {
         alert("you lost the game:");
         location.reload();
     }
@@ -190,7 +188,6 @@ window.addEventListener('keypress', e => {
 
     }
 });
-
 
 let startTime;
 let running = false;
