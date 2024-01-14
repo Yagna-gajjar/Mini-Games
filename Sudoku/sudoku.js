@@ -105,7 +105,7 @@ function selectnumber(n) {
             else {
                 audio.play();
                 mistakes++;
-                document.getElementById("mistakes").innerText = mistakes;
+                document.getElementById("mistakes").innerText = "mistakes: " + mistakes;
             }
         }
     }
