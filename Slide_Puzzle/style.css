@@ -1,0 +1,98 @@
+/* green -> rgba(166,193,97,1), #a6c161 */
+/* blue -> rgba(132,205,193,1), #84cdc1 */
+/* yellow -> rgba(240,185,110,1), #f0b96e */
+/* lightorange -> rgba(245,126,84,1), #f57e54 */
+/* orange -> rgba(217,87,66,1), #d95742 */
+
+html {
+    height: 100%;
+}
+
+body {
+    background: url('./background.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.game {
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.grid {
+    display: grid;
+    margin-top: 30%;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px 100px;
+    column-gap: 2%;
+    row-gap: 2%;
+}
+
+.grid button {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Rubik Scribble;
+    background: url('./block.png');
+    box-shadow: 3px 3px 0px 0px #4D392E;
+    border-radius: 10px;
+    border: 0.5px solid #4D392E;
+    color: #4D392E;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.15s ease-in;
+}
+
+.grid button:hover {
+    box-shadow: 0px 0px 0px 0px #4D392E;
+}
+
+
+#playpause {
+    background-color: #d95742;
+    border: 0px;
+    border-radius: 5px;
+    padding-block: 5px;
+    padding-inline: 10px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer button {
+    border: none;
+    font-size: 20px;
+    color: #f0b96e;
+    font-weight: bold;
+    font-family: Rubik Scribble;
+    padding-block: 5px;
+    border-radius: 10px;
+    background-color: #d95742;
+    outline: none;
+    cursor: pointer;
+}
+
+.footer button:hover {
+    background-color: #f0b96e;
+    color: #d95742;
+}
+
+.footer span {
+    color: #4D392E;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Rubik Scribble;
+    margin: auto 0;
+}
+
+.message {
+    height: 80px;
+    color: #f57e54;
+    font-family: Rubik Scribble;
+}

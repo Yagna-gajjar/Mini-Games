@@ -113,8 +113,8 @@ function slideRight() {
     for (let i = 0; i < rows; i++) {
         let row = ground[i];
         row.reverse();
-        row = slide(row);
         row.reverse();
+        row = slide(row);
         ground[i] = row;
 
         for (let j = 0; j < columns; j++) {
