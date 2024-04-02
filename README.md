@@ -11,3 +11,5 @@ Visit -> [Match Cards Game](https://yagna-gajjar.github.io/Mini-Games/Match%20Ca
 Visit -> [Snake Game](https://yagna-gajjar.github.io/Mini-Games/MYSnake/index.html)
 
 Visit -> [TicTac Game](https://yagna-gajjar.github.io/Mini-Games/TicTac/TicTac.html)
+
+Visit -> [Slide Puzzle](https://yagna-gajjar.github.io/Mini-Games/Slide_Puzzle/)
