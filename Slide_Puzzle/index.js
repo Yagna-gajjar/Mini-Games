@@ -169,7 +169,7 @@ class Game {
         const newButton = document.getElementById("playreset");
         if (status === "ready") newButton.textContent = "Play";
         if (status === "playing") newButton.textContent = "Reset";
-        if (status === "won") newButton.textContent = "Play";
+        if (status === "won") newButton.textContent = "Play again";
         newButton.addEventListener("click", () => {
             clearInterval(this.tickId);
             this.tickId = setInterval(this.tick, 1000);
