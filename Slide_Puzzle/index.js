@@ -169,16 +169,32 @@ class Game {
         const newButton = document.getElementById("playreset");
         if (status === "ready") newButton.textContent = "Play";
         if (status === "playing") newButton.textContent = "Reset";
-        if (status === "won") newButton.textContent = "Play";
+        if (status === "won") newButton.textContent = "Play again";
         newButton.addEventListener("click", () => {
             clearInterval(this.tickId);
             this.tickId = setInterval(this.tick, 1000);
             this.setState(State.start());
         });
         document.querySelector(".footer button").replaceWith(newButton);
-
-        document.getElementById("time").textContent = `Time: ${time}`;
-
+        if (time == 0) {
+            document.getElementById("time").textContent = `Time: 00:00:00`;
+        }
+        else {
+            let seconds = 0;
+            let minutes = 0;
+            let hours = 0;
+            if (time < 3600) {
+                seconds = time % 60;
+                minutes = Math.floor(time / 60);
+                hours = 0;
+            }
+            else {
+                seconds = time % 60;
+                minutes = Math.floor((time % 3600) / 60);
+                hours = Math.floor(time / 3600);
+            }
+            document.getElementById("time").textContent = `Time: ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
         if (status === "won") {
             document.querySelector(".message").textContent = "You win!";
         } else {

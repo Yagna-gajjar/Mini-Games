@@ -1,11 +1,13 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
 }
-#background{
-    background-image: radial-gradient(#d3c0eb,#d3c0eb,#674295);
+
+body {
+    background-image: radial-gradient(#d3c0eb, #d3c0eb, #674295);
 }
-#ground{
+
+#ground {
     width: 600px;
     height: 600px;
     background-color: #674295;
@@ -15,65 +17,138 @@
     padding: 3px;
     border-radius: 20px;
 }
-.item{
+
+.item {
     width: 140px;
     height: 140px;
     background-color: #7e6799;
     font-size: 50px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 5px solid #674295;
     display: flex;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border-radius: 20px;
 }
-.score{
-    text-align: center; 
-    font-size: 50px; 
+
+@media (max-width: 700px) {
+    .item {
+        width: 115px;
+        height: 115px;
+    }
+
+    #ground {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 550px) {
+    .item {
+        width: 90px;
+        height: 90px;
+        font-size: 40px;
+
+    }
+
+    #ground {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 450px) {
+    .item {
+        width: 70px;
+        height: 70px;
+        font-size: 30px;
+        border: 3px solid #674295;
+        border-radius: 15px;
+    }
+
+    #ground {
+        width: 300px;
+        height: 300px;
+        border-radius: 15px;
+    }
+}
+
+@media (max-width: 350px) {
+    .item {
+        width: 57.5px;
+        height: 57.5px;
+        font-size: 20px;
+        border: 3px solid #674295;
+        border-radius: 10px;
+    }
+
+    #ground {
+        width: 250px;
+        height: 250px;
+        border-radius: 10px;
+    }
+}
+
+.score {
+    text-align: center;
+    font-size: 50px;
     padding: 20px;
     color: #674295;
 }
-.x2{
+
+.x2 {
     background-color: #e4cae4;
     color: #300030;
     text-align: center;
 }
-.x4{
+
+.x4 {
     background-color: #ddbbdd;
     color: #300030;
 }
-.x8{
+
+.x8 {
     background-color: #d5acd5;
     color: #300030;
 }
-.x16{
+
+.x16 {
     background-color: #ca97ca;
     color: #300030;
 }
-.x32{
+
+.x32 {
     background-color: #bd7dbd;
     color: #300030;
 }
-.x64{
+
+.x64 {
     background-color: #ad5cad;
     color: #800080;
 }
-.x128{
+
+.x128 {
     background-color: #993399;
     color: #d5acd5;
 }
-.x256{
+
+.x256 {
     background-color: #800080;
     color: #ddbbdd;
 }
-.x512{
+
+.x512 {
     background-color: #700070;
     color: #d5acd5;
 }
-.x1024{
+
+.x1024 {
     background-color: #600060;
     color: #ca97ca;
 }
-.x2048{
+
+.x2048 {
     background-color: #500050;
     color: #bd7dbd;
 }

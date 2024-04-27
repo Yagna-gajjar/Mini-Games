@@ -3,6 +3,8 @@ var score = 0;
 var rows = 4;
 var columns = 4
 var GameOver = 0;
+var generateArray = [2];
+var initmaxNumber = 2;
 function GameEngine() {
     ground = [
         [0, 0, 0, 0],
@@ -19,8 +21,7 @@ function GameEngine() {
             document.getElementById("ground").append(item);
         }
     }
-    setTwo();
-    setTwo();
+    setFirstTwo();
 }
 
 function emptyitem() {
@@ -34,25 +35,69 @@ function emptyitem() {
     return false;
 }
 
+function setFirstTwo() {
+
+    if (!emptyitem()) {
+        return;
+    }
+    let r1 = Math.round(Math.random() * 3);
+    let c1 = Math.round(Math.random() * 3);
+
+    let r2 = Math.round(Math.random() * 3);
+    let c2 = Math.round(Math.random() * 3);
+
+    ground[r1][c1] = 2;
+    ground[r2][c2] = 2;
+    while (r1 == r2 && c1 == c2) {
+        c2 = Math.round(Math.random() * 3);
+    }
+    let item1 = document.getElementById(r1.toString() + "-" + c1.toString());
+    let item2 = document.getElementById(r2.toString() + "-" + c2.toString());
+    item1.innerText = "2";
+    item1.classList.add("x2");
+    item2.innerText = "2";
+    item2.classList.add("x2");
+}
+
 function setTwo() {
 
     if (!emptyitem()) {
         return;
     }
-
+    var maxNumber = 0;
+    for (let row of ground) {
+        for (let num of row) {
+            if (num > maxNumber) {
+                maxNumber = num;
+            }
+        }
+    }
+    if (maxNumber > initmaxNumber && maxNumber == 16) {
+        generateArray.push(4);
+    }
+    if (maxNumber > initmaxNumber && maxNumber == 64) {
+        generateArray.push(8);
+    }
+    if (maxNumber > initmaxNumber && maxNumber == 256) {
+        generateArray.push(16);
+    }
+    if (maxNumber > initmaxNumber && maxNumber == 1024) {
+        generateArray.push(32);
+    }
+    initmaxNumber = maxNumber;
     let found = false;
     while (!found) {
-        let r = Math.round(Math.random() * 4);
-        let c = Math.round(Math.random() * 4);
-
+        let r = Math.round(Math.random() * 3);
+        let c = Math.round(Math.random() * 3);
         if (ground[r][c] == 0) {
             ground[r][c] = 2;
             let item = document.getElementById(r.toString() + "-" + c.toString());
-            item.innerText = "2";
-            item.classList.add("x2");
+            let newgenerate = Math.round(Math.random() * (generateArray.length - 1));
+            item.innerText = generateArray[newgenerate];
+            item.classList.add("x" + generateArray[newgenerate]);
+
             found = true;
         }
-
     }
 }
 
@@ -113,8 +158,8 @@ function slideRight() {
     for (let i = 0; i < rows; i++) {
         let row = ground[i];
         row.reverse();
-        row.reverse();
         row = slide(row);
+        row.reverse();
         ground[i] = row;
 
         for (let j = 0; j < columns; j++) {
