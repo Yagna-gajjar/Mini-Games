@@ -1,16 +1,16 @@
 //Game Constants & variable
 let inputDir = { x: 0, y: 0 }
 let speed = 10;
-let score = 20;
+let score = 0;
 let lastpaintTime = 0;
 let snakearr = [
     { x: 13, y: 15 },
 ]
+
 let food = { x: 10, y: 5 }
 //Game Function
 function main(Ctime) {
     window.requestAnimationFrame(main);
-    //console.log(Ctime)
     if ((Ctime - lastpaintTime) / 1000 < 1 / speed) {
         return;
     }
@@ -108,6 +108,5 @@ window.addEventListener('keydown', e => {
             break;
         default:
             break;
-
     }
 });

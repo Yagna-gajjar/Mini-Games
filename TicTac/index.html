@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTac</title>
+</head>
+<style>
+    #ground {
+        height: 600px;
+        width: 600px;
+        display: flex;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        background-color: #00ffff;
+        margin: auto;
+    }
+
+    .item {
+        margin: 10px;
+        background-color: #b7ffff;
+        padding-top: 30px;
+        color: #297676;
+    }
+
+    #head {
+        width: 600px;
+        height: 60px;
+        margin: auto;
+        margin-bottom: 10px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+
+    .A {
+        color: rgb(41, 118, 118);
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .box {
+        display: flex;
+        font-size: 7vw;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info {
+        text-align: center;
+        font-size: 4vw;
+        color: rgb(41, 118, 118);
+    }
+</style>
+
+<body>
+    <div id="head">
+        <div id="X" class="A">X - turn</div>
+        <div id="O" class="A">O - turn</div>
+    </div>
+    <div id="ground">
+        <div class="item"><span class="box"></span></div>
+        <div class="item"><span class="box"></span></div>
+        <div class="item"><span class="box"></span></div>
+        <div class="item"><span class="box"></span></div>
+        <div class="item"><span class="box"></span></div>
+        <div class="item"><span class="box"></span></div>
+        <div class="item"><span class="box"></span></div>
+        <div class="item"><span class="box"></span></div>
+        <div class="item"><span class="box"></span></div>
+    </div>
+
+    <script>
+        let turn = "X";
+        let c = 0;
+
+        // function to check a win
+        function checkWin() {
+            let boxtexts = document.getElementsByClassName('box');
+            let wins = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 4, 8], [2, 4, 6], [0, 3, 6], [1, 4, 7], [2, 5, 8]]
+
+            wins.forEach(e => {
+                if ((boxtexts[e[0]].innerText == boxtexts[e[1]].innerText) && (boxtexts[e[2]].innerText == boxtexts[e[1]].innerText) && (boxtexts[e[0]].innerText != "")) {
+                    gameover(boxtexts[e[0]].innerText);
+                }
+                else {
+                    c++;
+                }
+            })
+
+            if (c == 72) {
+                alert("Game Draw");
+                if (confirm("want to play this game again? ")) {
+                    location.reload();
+                }
+                else {
+                    alert("thanks for playing this game")
+                }
+            }
+        }
+
+        // print functions
+        let boxes = document.getElementsByClassName('item');
+        document.getElementById("X").style.background = "rgb(183, 255, 255)";
+        Array.from(boxes).forEach(element => {
+            let boxtext = element.querySelector('.box');
+            element.addEventListener('click', () => {
+                if (boxtext.innerText === "") {
+                    if (turn == "X") {
+                        boxtext.innerText = "X";
+                        turn = "O";
+                        document.getElementById("O").style.background = "rgb(183, 255, 255)";
+                        document.getElementById("X").style.background = "";
+                    }
+                    else {
+                        boxtext.innerText = "O";
+                        turn = "X";
+                        document.getElementById("X").style.background = "rgb(183, 255, 255)";
+                        document.getElementById("O").style.background = "";
+                    }
+                    checkWin();
+                }
+            })
+        })
+        //reset function
+        function gameover(e) {
+            alert(e + " won");
+            if (confirm("want to play this game again? ")) {
+                location.reload();
+            }
+            else {
+                alert("thanks for playing this game")
+            }
+        }
+    </script>
+</body>
+
+</html>

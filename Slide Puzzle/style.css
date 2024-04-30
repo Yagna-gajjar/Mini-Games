@@ -3,8 +3,8 @@
 /* yellow -> rgba(240,185,110,1), #f0b96e */
 /* lightorange -> rgba(245,126,84,1), #f57e54 */
 /* orange -> rgba(217,87,66,1), #d95742 */
-
-/* html {
+/* 
+html {
     height: 100%;
 } */
 
@@ -14,6 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .game {

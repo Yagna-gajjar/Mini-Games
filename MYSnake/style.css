@@ -16,7 +16,7 @@
 }
 
 #ground {
-    background: radial-gradient(blueviolet, rgb(164, 76, 245));
+    background: radial-gradient(#8a2be2, #a44cf5);
     width: 100vmin;
     height: 90vmin;
     border: 2px solid purple;
@@ -29,7 +29,7 @@
     position: absolute;
     top: 20px;
     left: 100px;
-    color: rgb(58, 4, 109);
+    color: #3a046d;
     font-size: 35px;
 }
 
@@ -53,7 +53,7 @@
 
 
 .snake {
-    background-color: rgb(128, 33, 128);
+    background-color: #802180;
     border-radius: 20%;
     border: 1px solid blueviolet;
 }

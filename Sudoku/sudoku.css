@@ -17,8 +17,8 @@
 .box {
     width: 54px;
     height: 54px;
-    color: rgb(165, 93, 42);
-    border: 1px solid rgb(165, 93, 42, 0.3);
+    color: #a55d2a;
+    border: 1px solid #a55d2a4d;
     font-size: 25px;
     display: flex;
     justify-content: center;
