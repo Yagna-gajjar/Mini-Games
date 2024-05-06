@@ -5,6 +5,7 @@ games = [
     { nameofgame: "MYSnake", imageofgame: "img/Mysnake.png", primary: "#3a046d", secondary: "#a44cf5" },
     { nameofgame: "Match Cards", imageofgame: "img/card-match.png", primary: "#dda0dd", secondary: "#000000" },
     { nameofgame: "Slide Puzzle", imageofgame: "img/slide-puzzle.png", primary: "#84cdc1", secondary: "#4D392E" },
+    { nameofgame: "Block Sortng", imageofgame: "img/Block-Sortng.png", primary: "#663300", secondary: "#ffffff" },
 ]
 
 let currentgame = 2048;
