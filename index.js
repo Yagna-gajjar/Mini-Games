@@ -8,16 +8,9 @@ games = [
 ]
 
 let currentgame = 2048;
-
 let gamelist = document.getElementById("gamelist");
 
-let j = 0;
-let k = 4;
-
-if (j == 0) document.getElementsByClassName("bi-arrow-left-circle-fill")[0].style.display = "none";
-if (k == games.length) document.getElementsByClassName("bi-arrow-right-circle-fill")[0].style.display = "none";
-
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < games.length; i++) {
     let gamecard = document.createElement("div");
     gamecard.classList = "gamecard col-3";
     gamecard.style.backgroundColor = games[i].primary;
@@ -33,41 +26,6 @@ for (let i = 0; i < 4; i++) {
     gamecard.innerText = games[i].nameofgame;
     gamelist.appendChild(gamecard)
 };
-
-function changelist(j, k) {
-
-    if (j == 0) document.getElementsByClassName("bi-arrow-left-circle-fill")[0].style.display = "none";
-    else document.getElementsByClassName("bi-arrow-left-circle-fill")[0].style.display = "block";
-    if (k == games.length) document.getElementsByClassName("bi-arrow-right-circle-fill")[0].style.display = "none";
-    else document.getElementsByClassName("bi-arrow-right-circle-fill")[0].style.display = "block";
-
-    for (let i = j, p = 0; i < k, p < 4; i++, p++) {
-        let gamecard = document.getElementsByClassName("gamecard")[p];
-        gamecard.innerText = games[i].nameofgame;
-        gamecard.style.backgroundColor = games[i].primary;
-        gamecard.style.color = games[i].secondary;
-        gamecard.addEventListener("click", () => {
-            currentgame = games[i].nameofgame;
-            changebackground(games[i].imageofgame)
-        })
-        let play_current_game = document.getElementsByClassName("playbutton")[0];
-        play_current_game.addEventListener("click", () => {
-            start_current_game(currentgame);
-        })
-    }
-}
-
-function moveleft() {
-    j--;
-    k--;
-    changelist(j, k);
-}
-
-function moveright() {
-    j++;
-    k++;
-    changelist(j, k);
-}
 
 function changebackground(backimage) {
     document.getElementsByClassName("currentgame")[0].style.backgroundImage = "url('./" + backimage + "')";

@@ -3,20 +3,12 @@ body {
     overflow: hidden;
 }
 
-.arrow {
-    width: 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
+.gamecard {
+    text-align: center;
 }
 
 .list {
-    width: 90%;
-}
-
-.gamecard {
-    text-align: center;
+    overflow-x: scroll;
 }
 
 .currentgame {
