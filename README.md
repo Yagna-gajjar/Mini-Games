@@ -16,4 +16,4 @@ Visit -> [TicTac Game](https://yagna-gajjar.github.io/Mini-Games/TicTac/index.ht
 
 Visit -> [Slide Puzzle](https://yagna-gajjar.github.io/Mini-Games/Slide_Puzzle/index.html)
 
-Visit -> [Block Sorting](https://yagna-gajjar.github.io/Mini-Games/Block%20Sorting/index.html)
+Visit -> [Block Sorting](https://yagna-gajjar.github.io/Mini-Games/Block%20Sortng/index.html)
