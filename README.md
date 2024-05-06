@@ -1,5 +1,7 @@
 # Mini-Games
 
+[Start Playing](https://yagna-gajjar.github.io/Mini-Games)
+
 this page contain Mini Games which are fun to plays 
 
 Visit -> [Sudoku Game](https://yagna-gajjar.github.io/Mini-Games/Sudoku/index.html)
@@ -12,4 +14,6 @@ Visit -> [Snake Game](https://yagna-gajjar.github.io/Mini-Games/MYSnake/index.ht
 
 Visit -> [TicTac Game](https://yagna-gajjar.github.io/Mini-Games/TicTac/index.html)
 
-Visit -> [Slide Puzzle](https://yagna-gajjar.github.io/Mini-Games/Slide_Puzzle/)
+Visit -> [Slide Puzzle](https://yagna-gajjar.github.io/Mini-Games/Slide_Puzzle/index.html)
+
+Visit -> [Block Sorting](https://yagna-gajjar.github.io/Mini-Games/Block Sorting/index.html)
