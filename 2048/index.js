@@ -7,9 +7,9 @@ var generateArray = [2];
 var initmaxNumber = 2;
 function GameEngine() {
     ground = [
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
-        [0, 0, 0, 0],
+        [2048, 1024, 512, 256],
+        [128, 64, 32, 16],
+        [8, 4, 2, 0],
         [0, 0, 0, 0]
     ]
     for (let i = 0; i < rows; i++) {
@@ -21,7 +21,7 @@ function GameEngine() {
             document.getElementById("ground").append(item);
         }
     }
-    setFirstTwo();
+    // setFirstTwo();
 }
 
 function emptyitem() {
