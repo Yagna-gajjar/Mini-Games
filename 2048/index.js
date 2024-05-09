@@ -9,7 +9,7 @@ function GameEngine() {
     ground = [
         [0, 0, 0, 0],
         [0, 0, 0, 0],
-        [8, 4, 2, 0],
+        [0, 0, 0, 0],
         [0, 0, 0, 0]
     ]
     for (let i = 0; i < rows; i++) {
