@@ -7,8 +7,8 @@ var generateArray = [2];
 var initmaxNumber = 2;
 function GameEngine() {
     ground = [
-        [2048, 1024, 512, 256],
-        [128, 64, 32, 16],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
         [8, 4, 2, 0],
         [0, 0, 0, 0]
     ]
