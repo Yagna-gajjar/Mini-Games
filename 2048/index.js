@@ -21,7 +21,7 @@ function GameEngine() {
             document.getElementById("ground").append(item);
         }
     }
-    // setFirstTwo();
+    setFirstTwo();
 }
 
 function emptyitem() {
